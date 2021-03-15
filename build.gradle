@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_15
+targetCompatibility = JavaVersion.VERSION_15
+
+def junitVersion = '5.7.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    compile 'com.opencsv:opencsv:5.1'
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile 'com.google.code.gson:gson:2.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
